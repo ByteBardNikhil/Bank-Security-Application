@@ -2,6 +2,8 @@ package com.security.bank.user;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,12 +18,13 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
-public class UserController {
+public class UserController{
 	
 //	private final AuthService authService;
 //	private final UserService userService;
 	
 	@GetMapping("/test")
+	@PreAuthorize("hasRole('ADMIN')")
 	public String testConnection()
 	{
 		return "Success";
@@ -32,6 +35,7 @@ public class UserController {
 	{
 		
 //		JwtResponse jwtResponse=authService.login(jwtRequest);
+		
 		return ResponseEntity.ok(null);
 	}
 	@PostMapping("/register")
