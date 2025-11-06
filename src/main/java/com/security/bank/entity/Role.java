@@ -22,7 +22,7 @@ public class Role {
   private Long id;
   private String roleName;
   public String getRoleName() {
-	// TODO Auto-generated method stub
+	
 	return this.roleName;
   }
   
