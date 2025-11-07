@@ -27,7 +27,9 @@ import com.security.bank.dto.UserDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 
@@ -38,6 +40,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Setter
+@Getter
 public class User implements UserDetails {
 
     @Id
@@ -76,101 +80,6 @@ public class User implements UserDetails {
         user.setIdentityProof(userDto.getIdentityProof());
         return user;
     }
-
-    public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public Long getNumber() {
-		return number;
-	}
-
-	public void setNumber(Long number) {
-		this.number = number;
-	}
-
-	public String getIdentityProof() {
-		return identityProof;
-	}
-
-	public void setIdentityProof(String identityProof) {
-		this.identityProof = identityProof;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
-	public List<Account> getAccountList() {
-		return accountList;
-	}
-
-	public void setAccountList(List<Account> accountList) {
-		this.accountList = accountList;
-	}
-
-	public List<Investment> getInvestmentList() {
-		return investmentList;
-	}
-
-	public void setInvestmentList(List<Investment> investmentList) {
-		this.investmentList = investmentList;
-	}
-
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
-	
-
-
-    
-   
-    
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

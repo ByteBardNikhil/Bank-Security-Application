@@ -26,16 +26,15 @@ public class UserController{
 	
 	private final UserService userService;
 	
-    public UserController(UserService userService)
-    {
-    	this.userService=userService;
-    }
+ 
     /*
      * User 1 :
+     *   "username": "riya_s",
+  "password": "abc@987",
      * */
 	
 	@GetMapping("/test")
-	@PreAuthorize("hasRole('NORMAL')")
+	
 	public String testConnection()
 	{
 		return "Success";
